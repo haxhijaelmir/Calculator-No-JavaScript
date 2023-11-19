@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: 'Lexend Mega', sans-serif;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #010129;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 12%;
+    left: 52%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #010129, #115b94);
+    border-radius: 50%;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 60%;
+    left: 35%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #eb6c6c, #810438);
+    border-radius: 50%;
+}
+
+.wrapper {
+    width: 300px;
+    min-height: 400px;
+    backdrop-filter: blur(20px);
+    background-color: #fff1;
+    box-shadow: 20px 20px 50px #00000080;
+    border: 2px solid #fff3;
+    overflow: hidden;
+    z-index: 2;
+}
+
+input {
+    width: 100%;
+    height: 100px;
+    background-color: #fff7;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #115b94;
+    padding: 0 15px;
+    text-align: right;
+}
+
+input::placeholder {
+    color: #115b94;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.numbers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calCol {
+    display: grid;
+    grid-gap: 5px;
+}
+
+.calCol .btn,
+.calCol .resultBtn {
+    width: 70px;
+    height: 70px;
+    color: #fff;
+    background-color: #fff1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.calCol .resultBtn {
+    height: 145px;
+}
+
+.calCol .btn::before,
+.calCol .resultBtn::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #fff5;
+}
+
+.calCol .btn:active:before,
+.calCol .resultBtn:active:before {
+    animation: animate 1s linear;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0.6);
+        opacity: 0.6;
+        border-radius: 50%;
+    }
+    100% {
+        transform: scale(4.5);
+        opacity: 1;
+        border-radius: 0;
+    }
+}
